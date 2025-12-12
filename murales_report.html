@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Murales di Castellana Sicula - Report Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .cover-page {
+            text-align: center;
+            border-bottom: 3px solid #d4a574;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .cover-page h1 {
+            font-size: 3em;
+            color: #8b4513;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .cover-page .subtitle {
+            font-size: 1.5em;
+            color: #d4a574;
+            margin-bottom: 20px;
+        }
+        
+        .cover-page .details {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        .page-break {
+            page-break-after: always;
+            margin: 40px 0;
+        }
+        
+        h2 {
+            font-size: 2em;
+            color: #8b4513;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d4a574;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            color: #a0522d;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            font-size: 1.1em;
+            color: #8b4513;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #d4a574 0%, #8b4513 100%);
+            border: 2px solid #8b4513;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        .mural-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #d4a574;
+            border-radius: 4px;
+        }
+        
+        .mural-section h4 {
+            color: #8b4513;
+        }
+        
+        .detail-list {
+            list-style-type: none;
+            margin: 10px 0;
+        }
+        
+        .detail-list li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #ddd;
+        }
+        
+        .detail-list strong {
+            color: #8b4513;
+            display: inline-block;
+            width: 120px;
+        }
+        
+        .artist-card {
+            background: linear-gradient(135deg, #f5f5f5 0%, #efefef 100%);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #d4a574;
+        }
+        
+        .artist-card h4 {
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+        
+        .toc {
+            background-color: #fffacd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .toc h3 {
+            color: #8b4513;
+            margin-top: 0;
+        }
+        
+        .toc ol {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        
+        .toc a {
+            text-decoration: none;
+            color: #8b4513;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #d4a574;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .info-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #2c5aa0;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .info-box strong {
+            color: #2c5aa0;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+                padding: 20mm;
+            }
+            
+            .page-break {
+                page-break-after: always;
+            }
+            
+            .image-placeholder {
+                page-break-inside: avoid;
+            }
+        }
+        
+        .coordinates {
+            font-size: 0.9em;
+            color: #666;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- COPERTINA -->
+        <div class="cover-page">
+            <h1>🎨 I Murales di Castellana Sicula</h1>
+            <p class="subtitle">Report Completo: Ubicazioni, Artisti e Storie</p>
+            <p class="subtitle">Museo a Cielo Aperto delle Madonie</p>
+            <div class="details">
+                <p><strong>Comune:</strong> Castellana Sicula, Palermo - Sicilia</p>
+                <p><strong>Provincia:</strong> Madonie</p>
+                <p><strong>Altitudine:</strong> 800 m s.l.m.</p>
+                <p><strong>Anno Inizio Progetto:</strong> 1994</p>
+                <p style="margin-top: 30px; font-size: 0.9em;">
+                </p>
+            </div>
+        </div>
+        
+        <!-- PAGINA INDICE -->
+        <div class="page-break"></div>
+        <h2>Indice dei Contenuti</h2>
+        <div class="toc">
+            <ol>
+                <li>Introduzione</li>
+                <li>Storia del Progetto Murales</li>
+                <li>I Principali Murales</li>
+                <li>Gli Artisti Principali</li>
+                <li>Percorsi e Ubicazioni</li>
+                <li>Significato Culturale e Artistico</li>
+                <li>Informazioni Pratiche per la Visita</li>
+                <li>Conclusioni</li>
+            </ol>
+        </div>
+        
+        <!-- SEZIONE 1: INTRODUZIONE -->
+        <div class="page-break"></div>
+        <h2>1. Introduzione</h2>
+        
+        <p>
+            Castellana Sicula, piccolo comune di circa <span class="highlight">3.000 abitanti</span> situato nel cuore delle Madonie a 800 metri sul livello del mare, è diventato a partire dal 1994 un vero e proprio <span class="highlight">museo a cielo aperto dedicato all'arte murale</span>.
+        </p>
+        
+        <div class="image-placeholder">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Castellana_Sicula_panorama.JPG/330px-Castellana_Sicula_panorama.JPG">
+        </div>
+        
+        <p>
+            Per questa sua caratteristica unica, il paese è stato designato come la <span class="highlight">"Città dei Murales"</span>, una distinzione che lo ha reso meta di artisti italiani e stranieri che si cimentano in sfide artistiche condividendo i muri della comunità.
+        </p>
+        
+        <div class="info-box">
+            <strong>📌 Curiosità:</strong> Castellana Sicula rappresenta uno dei rarissimi esempi in Sicilia di trasformazione urbana attraverso l'arte murale organizzata come progetto culturale permanente.
+        </div>
+        
+        <!-- SEZIONE 2: STORIA -->
+        <div class="page-break"></div>
+        <h2>2. Storia del Progetto Murales</h2>
+        
+        <h3>Origini (1994)</h3>
+        <p>
+            Il movimento artistico dei murales a Castellana Sicula ha inizio nel <span class="highlight">1994</span>, quando il primo gruppo di artisti decise di trasformare i muri del paese in tele viventi. Quello che era iniziato come un'iniziativa sperimentale si è trasformato in un progetto culturale permanente che continua ancora oggi.
+        </p>
+        
+        <h3>Sviluppo e Crescita</h3>
+        <p>
+            Nel corso dei decenni, <span class="highlight">oltre 30 artisti professionisti</span> hanno contribuito con le loro opere alle vie del paese, creando un patrimonio artistico straordinario che supera le <span class="highlight">50 opere murarie</span>. Questo fenomeno ha attirato anche giovani talenti locali come Franco Lo Cascio e Croce Taravella, considerati tra i principali interpreti della street art castellanese.
+        </p>
+        
+        <div class="image-placeholder">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStIUIIWj6VATFDiAxwY5ZeGKqyxgczybvWhQ&s">
+        </div>
+        
+        <h3>Il Progetto RestArt (2021-2023)</h3>
+        <p>
+            Negli anni più recenti, è stato avviato il progetto <span class="highlight">RestArt</span> (<em>Riqualificazione attraverso l'Estetica dell'arte</em>), che ha portato artisti di rilievo internazionale come <span class="highlight">Emanuele Poki</span> a realizzare murales di dimensioni importanti con tematiche legate all'ambiente, alla sostenibilità e ai diritti umani.
+        </p>
+        
+        <!-- SEZIONE 3: MURALES PRINCIPALI -->
+        <div class="page-break"></div>
+        <h2>3. I Principali Murales</h2>
+        
+        <h3>1. "Amaltea" - Emanuele Poki (2023)</h3>
+        <div class="mural-section">
+            <h4>Dettagli dell'Opera</h4>
+            <ul class="detail-list">
+                <li><strong>Artista:</strong> Emanuele Poki (Catania)</li>
+                <li><strong>Anno:</strong> 2023</li>
+                <li><strong>Progetto:</strong> RestArt</li>
+                <li><strong>Ubicazione:</strong> Centro di Castellana Sicula</li>
+                <li><strong>Soggetto:</strong> Amaltea, la capra mitologica</li>
+                <li><strong>Dimensioni:</strong> Significative (murales di grande impatto)</li>
+            </ul>
+            
+            <div class="image-placeholder">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ9VN8VWKB2Zqp9XZlwQIqx-byy9QhBGFEnQ&s">
+            </div>
+            
+            <h4>Descrizione Artistica</h4>
+            <p>
+                Un murale di grande impatto che raffigura <span class="highlight">Amaltea</span>, la capra mitologica che nutrì Zeus nell'isola di Creta secondo la mitologia greca. L'opera di Poki è caratteristica per l'uso di elementi naturali e simboli di forza e protezione.
+            </p>
+            
+            <h4>Significato Culturale</h4>
+            <p>
+                L'opera rappresenta il tema della <span class="highlight">nutrizione, della protezione e dell'armonia con la natura</span>, valori fondamentali per la comunità agricola castellanese. Il richiamo alla mitologia classica unisce le radici della civiltà mediterranea con i temi contemporanei di sostenibilità e protezione ambientale.
+            </p>
+        </div>
+        
+        <div class="page-break"></div>
+        <h3>2. "Un Mare di Plastica" - Lorenzo Lo Cascio (2022)</h3>
+        <div class="mural-section">
+            <h4>Dettagli dell'Opera</h4>
+            <ul class="detail-list">
+                <li><strong>Artista:</strong> Lorenzo Lo Cascio (Castellana Sicula)</li>
+                <li><strong>Anno:</strong> 2022</li>
+                <li><strong>Progetto:</strong> RestArt</li>
+                <li><strong>Ubicazione:</strong> Via centrale di Castellana Sicula</li>
+                <li><strong>Tema:</strong> Inquinamento marino e sostenibilità</li>
+            </ul>
+            
+            <div class="image-placeholder">
+                <img src="https://madonielive.com/wp-content/uploads/2022/09/307348326_191793886552240_5345183914157014927_n.jpg">
+            </div>
+            
+            <h4>Descrizione Artistica</h4>
+            <p>
+                Un murale di dimensioni significative che affronta il tema contemporaneo dell'<span class="highlight">inquinamento marino</span>. L'opera illustra graficamente i danni causati dalla plastica negli oceani, con una composizione visivamente forte e comunicativa.
+            </p>
+            
+            <h4>Significato e Impatto</h4>
+            <p>
+                Sensibilizzazione ambientale rispetto al problema globale della plastica nei mari. Un'opera che parla di <span class="highlight">sostenibilità e responsabilità collettiva verso l'ecosistema marino</span>. Rappresenta l'impegno degli artisti castellanesi nel portare l'attenzione del pubblico su problematiche sociali e ambientali urgenti.
+            </p>
+        </div>
+        
+        <div class="page-break"></div>
+        <h3>3. "Fiore del Deserto" - Lorenzo Lo Cascio (2022)</h3>
+        <div class="mural-section">
+            <h4>Dettagli dell'Opera</h4>
+            <ul class="detail-list">
+                <li><strong>Artista:</strong> Lorenzo Lo Cascio (Castellana Sicula)</li>
+                <li><strong>Anno:</strong> 2022</li>
+                <li><strong>Progetto:</strong> RestArt</li>
+                <li><strong>Ubicazione:</strong> Via del centro storico</li>
+                <li><strong>Tema:</strong> Diritti delle donne e solidarietà globale</li>
+            </ul>
+            
+            <div class="image-placeholder">
+                <img src="https://madonielive.com/wp-content/uploads/2022/11/316672391_204368965294732_6131635673849374591_n.jpg">
+            </div>
+            
+            <h4>Descrizione Artistica</h4>
+            <p>
+                Un murale che ritrae il volto di una donna circondato da <span class="highlight">orchidee</span> (simbolo di bellezza ed eleganza), <span class="highlight">mimosa</span> (simbolo di solidarietà e rispetto) e <span class="highlight">girasole</span> (simbolo di forza e tenacia).
+            </p>
+            
+            <h4>Simbolismo e Messaggio Civile</h4>
+            <p>
+                L'opera affronta la tematica dei <span class="highlight">diritti delle donne nei paesi islamici</span>, promuovendo consapevolezza e solidarietà globale. Un messaggio potente di <span class="highlight">uguaglianza e dignità umana</span>. Dimostra la sensibilità dell'artista nel coniugare bellezza estetica con contenuti sociali significativi.
+            </p>
+        </div>
+        
+        <div class="page-break"></div>
+        <h3>4. "Castellana, Ulivo e Campanile"</h3>
+        <div class="mural-section">
+            <h4>Dettagli dell'Opera</h4>
+            <ul class="detail-list">
+                <li><strong>Artisti:</strong> Vari (progetto collettivo)</li>
+                <li><strong>Anno:</strong> Multiplo nel tempo</li>
+                <li><strong>Ubicazione:</strong> Vari punti del centro</li>
+                <li><strong>Tema:</strong> Identità culturale locale</li>
+            </ul>
+            
+            <div class="image-placeholder">
+                <img src="https://www.enjoysicilia.it/imgs/attrazioni/murales-castellana-sicula.jpg">
+            </div>
+            
+            <h4>Descrizione e Significato</h4>
+            <p>
+                Un'opera che celebra i simboli identitari di Castellana: l'<span class="highlight">ulivo</span> (rappresentazione dell'agricoltura madonita e della tradizione millenaria) e il <span class="highlight">campanile</span> (simbolo della chiesa madre e della comunità).
+            </p>
+            
+            <p>
+                Rappresenta le <span class="highlight">radici culturali e religiose del paese</span>, l'attaccamento alla terra e alle tradizioni locali. Un ponte tra il passato e il presente, tra la fede e l'agricoltura che caratterizzano la comunità castellanese.
+            </p>
+        </div>
+        
+        <!-- SEZIONE 4: ARTISTI -->
+        <div class="page-break"></div>
+        <h2>4. Gli Artisti Principali</h2>
+        
+        <h3>Franco Lo Cascio - Fondatore Locale</h3>
+        <div class="artist-card">
+            <h4>Franco Lo Cascio</h4>
+            <ul class="detail-list">
+                <li><strong>Provenienza:</strong> Castellana Sicula (locale)</li>
+                <li><strong>Periodo Attivo:</strong> Anni '90 e 2000</li>
+                <li><strong>Specializzazione:</strong> Street art tradizionale e figurativa</li>
+                <li><strong>Stile:</strong> Rappresentazioni realistiche con attenzione ai dettagli</li>
+                <li><strong>Ruolo:</strong> Co-fondatore del movimento murales castellanese</li>
+            </ul>
+            <p>
+                Ha realizzato numerosi murales negli anni '90 e 2000, contribuendo a stabilire l'identità artistica del paese. Le sue opere sono caratterizzate da <span class="highlight">rappresentazioni realistiche</span> con attenzione particolare ai dettagli e alla composizione.
+            </p>
+        </div>
+        
+        <h3>Croce Taravella - Co-Fondatore e Maestro</h3>
+        <div class="artist-card">
+            <h4>Croce Taravella</h4>
+            <ul class="detail-list">
+                <li><strong>Provenienza:</strong> Castellana Sicula (locale)</li>
+                <li><strong>Ruolo:</strong> Co-fondatore del movimento murales</li>
+                <li><strong>Specializzazione:</strong> Arte murale simbolica e astratta</li>
+                <li><strong>Atelier:</strong> Atelier Croce Taravella (ancora attivo)</li>
+                <li><strong>Attività Didattica:</strong> Insegnamento dell'arte murale</li>
+            </ul>
+            <p>
+                Ha dipinto numerosi murales presso i muri ad angolo del paese e mantiene uno studio (Atelier Croce Taravella) dove continua a creare e insegnare l'arte murale. Il suo stile è caratterizzato da <span class="highlight">forme astratte e simboliche, con forte legame al territorio</span>.
+            </p>
+            
+            <div class="info-box">
+                <strong>📍 Visita consigliata:</strong> Atelier Croce Taravella per osservare il processo creativo e conoscere la storia del progetto direttamente dal co-fondatore.
+            </div>
+        </div>
+        
+        <div class="page-break"></div>
+        <h3>Emanuele Poki - Artista Contemporaneo</h3>
+        <div class="artist-card">
+            <h4>Emanuele Poki</h4>
+            <ul class="detail-list">
+                <li><strong>Provenienza:</strong> Catania, Sicilia</li>
+                <li><strong>Formazione:</strong> Diplomato in grafica e fotografia (Istituto d'Arte)</li>
+                <li><strong>Specializzazione:</strong> Street art contemporanea, arte ambientale, poster art</li>
+                <li><strong>Tematiche Ricorrenti:</strong> Natura, animali, ambiente, diritti umani, sostenibilità</li>
+                <li><strong>Filosofia:</strong> "Ho scelto il Sud" - dedizione al Sud Italia e alla Sicilia</li>
+            </ul>
+            
+            <div class="image-placeholder">
+                <img src="https://www.leviedeitesori.com/wp-content/uploads/2024/01/Emanuele-Poki.jpg">
+            </div>
+            
+            <h4>Stile e Caratteristiche</h4>
+            <p>
+                Uso di <span class="highlight">elementi naturali, animali e piante come protagonisti</span>; forte componente simbolica e ambientalista. Le sue opere a Castellana fanno parte del progetto <span class="highlight">RestArt 2021-2023</span> e rappresentano l'evoluzione contemporanea dell'arte murale castellanese.
+            </p>
+            
+            <h4>Impatto Culturale</h4>
+            <p>
+                Poki ha deciso di <span class="highlight">restare in Sicilia per portare avanti progetti innovativi</span>, rifiutando le opportunità internazionali per mantenere un radicamento territoriale. Questo approccio lo accomuna ai fondatori locali, creando una continuità tra passato e presente del progetto murales castellanese.
+            </p>
+        </div>
+        
+        <h3>Lorenzo Lo Cascio - Artista Emergente</h3>
+        <div class="artist-card">
+            <h4>Lorenzo Lo Cascio</h4>
+            <ul class="detail-list">
+                <li><strong>Provenienza:</strong> Castellana Sicula (locale)</li>
+                <li><strong>Status:</strong> Artista emergente di rilievo</li>
+                <li><strong>Specializzazione:</strong> Arte murale contemporanea con messaggi sociali</li>
+                <li><strong>Tematiche:</strong> Ambiente, diritti umani, sostenibilità</li>
+                <li><strong>Progetti Recenti:</strong> RestArt 2021-2023</li>
+            </ul>
+            <p>
+                Rappresenta la <span class="highlight">nuova generazione di artisti castellanesi</span> che ha ereditato la tradizione murale e l'ha adattata ai temi contemporanei. Le sue opere sono caratterizzate da uno <span class="highlight">stile realistico con forte carica emotiva e messaggio civile</span>.
+            </p>
+        </div>
+        
+        <!-- SEZIONE 5: PERCORSI -->
+        <div class="page-break"></div>
+        <h2>5. Percorsi e Ubicazioni</h2>
+        
+        <h3>Zona Centrale (Castellana Sicula Centro)</h3>
+        <p>
+            La maggior parte dei murales storici si concentra nel <span class="highlight">centro del paese</span>, particolarmente negli angoli delle case e nelle piazze principali. Questo è il <span class="highlight">punto di partenza naturale</span> per chi visita per la prima volta.
+        </p>
+        
+        <div class="image-placeholder">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRniFLFrklBcgYbpSj1CCcGtd7zbWUoKbbGsg&s">
+        </div>
+        
+        <h3>Frazioni e Estensioni del Progetto</h3>
+        <p>
+            Il progetto si è ampliato anche nelle <span class="highlight">frazioni limitrofe</span>:
+        </p>
+        
+        <ul class="detail-list">
+            <li><strong>Calcarelli</strong> - Frazione con propri murales</li>
+            <li><strong>Nociazzi</strong> - Estensione del progetto artistico</li>
+            <li><strong>Frazzucchi</strong> - Altre realizzazioni murarie</li>
+            <li><strong>Catalani</strong> - Incremento recente di opere</li>
+        </ul>
+        
+        <div class="coordinates">
+            <strong>📍 Coordinate Centrali di Castellana Sicula:</strong><br/>
+            37.8456° N, 13.9897° E<br/>
+            Altitudine: 800 m s.l.m.
+        </div>
+        
+        <h3>Percorso Consigliato per la Visita</h3>
+        <p>
+            Un <span class="highlight">percorso tematico</span> parte dalla zona bassa di Castellana e <span class="highlight">sale verso gli altri centri abitati fino a Nociazzi</span>, permettendo ai visitatori di apprezzare:
+        </p>
+        <ul class="detail-list">
+            <li><strong>L'evoluzione artistica</strong> nel tempo (dalle opere degli anni '90 al progetto RestArt)</li>
+            <li><strong>Le diverse interpretazioni</strong> del tema murale</li>
+            <li><strong>Il contesto paesaggistico</strong> delle Madonie</li>
+            <li><strong>L'integrazione tra arte e territorio</strong></li>
+        </ul>
+        
+        <!-- SEZIONE 6: SIGNIFICATO CULTURALE -->
+        <div class="page-break"></div>
+        <h2>6. Significato Culturale e Artistico</h2>
+        
+        <h3>Importanza Storica e Identitaria</h3>
+        <p>
+            I murales rappresentano una forma contemporanea di <span class="highlight">narrazione collettiva</span> che unisce:
+        </p>
+        
+        <div style="background-color: #f0f0f0; padding: 20px; border-radius: 8px; margin: 15px 0;">
+            <ul class="detail-list">
+                <li><strong>Tradizione locale</strong> - Agricoltura, religiosità, comunità</li>
+                <li><strong>Problematiche contemporanee</strong> - Ambiente, diritti umani, sostenibilità</li>
+                <li><strong>Linguaggio universale dell'arte</strong> - Accessibile a tutti, gratuita, condivisa</li>
+            </ul>
+        </div>
+        
+        <h3>Impatto Turistico e Culturale</h3>
+        <p>
+            La designazione di Castellana come <span class="highlight">"Città dei Murales"</span> ha:
+        </p>
+        
+        <ul class="detail-list">
+            <li><strong>Aumentato l'attrattività turistica</strong> del paese</li>
+            <li><strong>Attirato artisti nazionali e internazionali</strong></li>
+            <li><strong>Creato una comunità artistica attiva</strong> che continua a crescere</li>
+            <li><strong>Trasformato lo spazio urbano</strong> in una galleria d'arte inclusiva</li>
+            <li><strong>Trasmesso alle generazioni future</strong> il valore dell'espressione artistica</li>
+        </ul>
+        
+        <div class="image-placeholder">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-TEqwHtK242l--WJHsdfsRUjsUq8Sbye4ig&s">
+        </div>
+        
+        <h3>La Pinacoteca Municipale</h3>
+        <p>
+            Il Comune ha anche realizzato una <span class="highlight">collezione di arte moderna</span> custodita nell'<span class="highlight">aula consiliare</span>, che funge da <span class="highlight">pinacoteca contemporanea</span> con le opere donate dagli artisti nel corso degli anni.
+        </p>
+        
+        <!-- SEZIONE 7: INFORMAZIONI PRATICHE -->
+        <div class="page-break"></div>
+        <h2>7. Informazioni Pratiche per la Visita</h2>
+        
+        <h3>Contatti per Visite Guidate</h3>
+        <div class="info-box">
+            <strong>📞 Telefono:</strong> 340 8646020<br/>
+            <strong>📧 Email:</strong> Visitcastellana@gmail.com<br/>
+            <strong>📝 Descrizione Servizio:</strong> Passeggiate tematiche tra miti, leggende e murales
+        </div>
+        
+        <h3>Percorso "Alla Scoperta dei Murales"</h3>
+        <p>
+            Il comune offre <span class="highlight">visite guidate organizzate</span> dove operatori locali accompagnano i visitatori alla scoperta della:
+        </p>
+        <ul class="detail-list">
+            <li><strong>Storia</strong> di ogni murale</li>
+            <li><strong>Significato culturale</strong> e artistico</li>
+            <li><strong>Dettagli tecnici</strong> della realizzazione</li>
+            <li><strong>Aneddoti e curiosità</strong> legate agli artisti</li>
+        </ul>
+        
+        <h3>Museo Civico</h3>
+        <div class="info-box">
+            <strong>📍 Ubicazione:</strong> Contrada Muratore<br/>
+            <strong>📦 Contenuto:</strong> Reperti archeologici, testimonianze della presenza umana nei secoli<br/>
+            <strong>🔗 Integrazione:</strong> I murales si completano con il patrimonio archeologico del territorio
+        </div>
+        
+        <h3>Stagione Migliore per la Visita</h3>
+        
+        <div style="display: grid; gap: 15px;">
+            <div style="background-color: #e8f5e9; padding: 15px; border-left: 4px solid #4caf50; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #2e7d32;">🌸 Primavera (Maggio-Giugno)</h4>
+                <p><strong>Clima piacevole</strong>, flora in fiore sullo sfondo dei Madoniti, ottimale per fotografie</p>
+            </div>
+            
+            <div style="background-color: #fff3e0; padding: 15px; border-left: 4px solid #ff9800; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #e65100;">☀️ Estate (Luglio-Agosto)</h4>
+                <p><strong>Eventi culturali</strong>, festival di street art (RestArt), maggiore afflusso turistico</p>
+            </div>
+            
+            <div style="background-color: #fce4ec; padding: 15px; border-left: 4px solid #e91e63; border-radius: 4px;">
+                <h4 style="margin-top: 0; color: #880e4f;">🍂 Autunno (Settembre-Ottobre)</h4>
+                <p><strong>Clima temperato</strong>, vedute panoramiche delle Madonie spettacolari, meno affollato</p>
+            </div>
+        </div>
+        
+        <h3>Come Raggiungerla</h3>
+        <p>
+            <strong>Da Palermo:</strong> ~100 km (circa 1 ora 45 minuti di auto)<br/>
+            <strong>Da Cefalù:</strong> ~50 km (circa 1 ora di auto)<br/>
+            <strong>Strada Principale:</strong> SS119 verso le Madonie
+        </p>
+        
+        <div class="info-box">
+            <strong>🚗 Consiglio:</strong> Parcheggiare nel centro e visitare a piedi per apprezzare meglio i murales e l'atmosfera del paese.
+        </div>
+        
+        <!-- SEZIONE 8: CONCLUSIONI -->
+        <div class="page-break"></div>
+        <h2>8. Conclusioni</h2>
+        
+        <p>
+            Castellana Sicula rappresenta un <span class="highlight">modello unico in Sicilia</span> di integrazione tra arte contemporanea, patrimonio culturale e comunità locale. Attraverso i murales, il paese ha trasformato una realtà geografica periferica in uno <span class="highlight">spazio culturale vivace e attrattivo</span>, dove l'arte murale non è solo decorazione ma <span class="highlight">linguaggio di comunicazione civile</span>.
+        </p>
+        
+        <div class="image-placeholder">
+            <img src="https://madonielive.com/wp-content/uploads/2022/09/307348326_191793886552240_5345183914157014927_n.jpg">
+        </div>
+        
+        <h3>Eredità Artistica</h3>
+        <p>
+            Gli artisti che hanno scelto di operare a Castellana, dai fondatori locali come Franco Lo Cascio e Croce Taravella fino ai contemporanei come Emanuele Poki e Lorenzo Lo Cascio, hanno dimostrato che <span class="highlight">l'arte ha il potere di rigenerare identità, comunicare valori e creare comunità</span>.
+        </p>
+        
+        <h3>Visione Futura</h3>
+        <p>
+            La designazione di <span class="highlight">"Città dei Murales" dal 1994</span> non è solo un marchio turistico, ma il <span class="highlight">riconoscimento di un processo artistico genuino</span> dove la creatività dialoga costantemente con il territorio, le tradizioni e le sfide contemporanee della comunità castellanese.
+        </p>
+        
+        <p>
+            Castellana Sicula continua a evolversi come <span class="highlight">esperienza immersiva</span> dove i visitatori possono:
+        </p>
+        
+        <ul class="detail-list">
+            <li><strong>Scoprire la storia</strong> attraverso l'arte murale</li>
+            <li><strong>Comprendere i valori</strong> della comunità locale</li>
+            <li><strong>Apprezzare la bellezza</strong> del paesaggio delle Madonie</li>
+            <li><strong>Connettersi con l'arte contemporanea</strong> in dialogo con il territorio</li>
+            <li><strong>Sostenere una comunità</strong> che ha scelto la creatività come strumento di sviluppo</li>
+        </ul>
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <p>
+                <strong>Report Completo: I Murales di Castellana Sicula</strong><br/>
+                Museo a Cielo Aperto delle Madonie<br/>
+                Dicembre 2025
+            </p>
+            <p>
+                <em>Per visite guidate e informazioni contattare:<br/>
+                    Tel. 340 8646020</em>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.8em;">
+                Report generato e compilato con fonti locali e ricerche culturali
+            </p>
+        </div>
+    </div>
+</body>
+</html>
